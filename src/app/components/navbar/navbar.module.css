@@ -1,0 +1,161 @@
+.container{
+    background-color: #ffc0cb;
+}
+
+.barra_envio{
+    display: flex;
+    background-color: #ffc0cb;
+    color: #3f3f40;
+    width: 100%;
+    justify-content: center;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.flex_left{
+    flex: 1;
+}
+
+.flex_right{
+    flex: 1;
+}
+
+.nav{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav_left li{
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+}
+
+.nav_left{
+    justify-content: flex-start;
+}
+
+.social_icons{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.link:visited{
+    color: #000;
+}
+
+.phone_icon{
+    height: 16px;
+    width: 16px;
+}
+
+.phone{
+    font-size: 16px;
+    font-weight: normal;
+    color: #3f3f40;
+}
+
+.nav_right{
+    justify-content: flex-end;
+}
+
+.icon_li{
+    margin: 0 .3em;
+}
+
+.icon{
+    height: 20px;
+}
+
+.contenedor_superior {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-bottom: 2px solid #F2F2F0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+.contenedor_titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2;
+}
+
+.contenedor_titulo img{
+    height: 100px;
+
+}
+
+.contenedor_titulo .button{
+    display: none;
+    background-color: #ffffff
+}
+
+.buscador{
+    border: 1px solid #841030;
+    border-radius: 10px;
+    padding: 7px;
+    width: 250px;
+    background-image: url(/prime_search.svg);
+    background-repeat: no-repeat;
+    background-position: 95%;
+}
+
+.buscador::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: #841030;
+}
+
+.buscador:focus {
+    outline: none;
+}
+
+.barra_navegacion{
+    background-color: #F2E1E6;
+}
+
+.lista {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    font-size: 18px;
+    grid-column-start: 3;
+    grid-column-end: 5;
+}
+
+.lista li a {
+    text-decoration: none;
+    position: relative;
+    font-weight: lighter;
+    color: #7d7d7d;
+    font-size: 21px;
+}
+
+.lista li a:hover{
+    color: #841030;
+}
+
+
+.item a {
+    text-decoration: none;
+}
+
+.contenedor_utilidades {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    grid-column: 5;
+}
