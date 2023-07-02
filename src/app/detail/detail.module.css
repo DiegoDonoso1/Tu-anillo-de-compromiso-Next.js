@@ -1,0 +1,204 @@
+.container_detalle{
+    display: flex;
+    width: 80%;
+    margin: 50px auto;
+    justify-content: center;
+    gap: 120px;
+    flex-wrap: wrap;
+}
+
+.image{
+    overflow: hidden;
+    height: 500px;
+}
+
+.image img{
+    height: 500px;
+    width: 500px;
+    transition: all .5s ease;
+}
+
+.image img:hover{
+    transform: scale(1.4);
+}
+
+.detalle{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    padding: 10px;
+}
+
+.detalle .titulo_anillo{
+    font-size: 26px;
+    font-weight: 200;
+    padding: 10px 0;
+    letter-spacing: 3px;
+}
+
+.detalle .material_anillo{
+    font-weight: 400;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.detalle .label_talla{
+    padding: 10px 0;
+}
+
+#talla{
+    width: 30%;
+    padding: 10px;
+    border: 2px solid #F2F2F0;
+}
+
+.detalle .guia_tallas{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.detalle .link_tallas{
+    text-decoration: none;
+    color: grey;
+}
+
+.detalle .stock_anillo{
+    font-weight: 300;
+    padding: 5px 0;
+}
+
+.detalle .stock_anillo span{
+    color: green;
+}
+
+.detalle .precio_anillo{
+    font-size: 25px;
+    padding: 10px 0;
+}
+
+.detalle .boton_carrito{
+    width: 40%;
+    background-color: #ffc0cb;
+    color: #fff;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.detalle .boton_carrito:hover{
+    background-color: #841030;
+}
+
+.detalle .envio{
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    gap: 5px;
+}
+
+.detalle .envio img{
+    height: 50px;
+    padding: 0 10px 0 0;
+}
+
+.detalle .envio p{
+    font-weight: 300;
+    color: #3F3F3F;
+}
+
+.detalle .envio span{
+    color: green;
+}
+
+.separacion{
+    text-align: center;
+    width: 100%;
+    margin: 30px 0;
+}
+
+.descripcion{
+    font-size: 18px;
+    font-weight: 300;
+    margin: auto;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    justify-self: center;
+    width: 80%;
+    color: grey;
+    letter-spacing: .8px;
+    text-align: start;
+}
+
+.separacion h3{
+    font-size: 22px;
+    font-weight: 300;
+    padding: 40px;
+    line-height: 5px;
+    letter-spacing: 2px;
+}
+
+
+.linea{
+    border:1px solid #F2F2F0;
+    width: 80%;
+    margin: auto;
+}
+
+
+
+/* Sugerencias */
+.contenedor_section{
+    height: 600px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    row-gap: 40px;
+}
+
+.container_sugerencia{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.titulo_sugerencia{
+    font-weight: 300;
+    font-size: 22px;
+    text-align: center;
+    color: #3F3F3F;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 480px) {
+
+    .container_detalle{
+        gap: 10px;
+    }
+
+    .image{
+        height: auto;
+    }
+
+    .image img{
+        height: 300px;
+        width: 300px;
+    }
+
+
+    .contenedor_section{
+        height: auto;
+    }
+
+    .container_sugerencia{
+        flex-direction: column;
+    }
+
+}
+
+
+

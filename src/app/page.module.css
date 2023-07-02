@@ -1,8 +1,67 @@
-.main {
+.contenedor_main{
+  background-image: url('/img/wedding-g1463dd25f_1280\ 1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6rem; 
-  min-height: 100vh;
+  justify-content: center;
+  align-items: end;
+  height: 500px;
+  width: 80%;
+  margin: auto;
+  padding-right: 20px;
+  text-align: center;
+  font-size: 25px;
 }
+
+.contenido_main{
+  text-align: start;
+}
+
+.contenido_main h2{
+  color: #841030;
+  font-weight: bold;
+  
+}
+
+.contenido_main p{
+  font-size: 20px;
+  padding: 2px;
+}
+
+.contenido_main button{
+  background-color: #F2BDD0;
+  color: #fff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  width: 200px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.contenido_main button:hover{
+  background-color: #841030;
+}
+
+
+.container_sugerencia{
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 480px) {
+
+  /* banner pagina */
+  .contenedor_main{
+    background-image: url('/img/banner-mobile.png');
+    padding: 15px;
+  }
+  
+  .contenido_main{
+    text-align: center;
+  }
+  }
+

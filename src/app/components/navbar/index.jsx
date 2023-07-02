@@ -30,11 +30,11 @@ export default function Navbar() {
 								<li className={styles.icon_li}>
 									<Link href="#">
 										<Image
-											className={`${styles.icon} ${styles.icon_ig}`}
+											className={styles.icon}
 											src="/img/ig-icon.svg"
 											alt=""
-											width={16}
-											height={16}
+											width={20}
+											height={20}
 										/>
 									</Link>
 								</li>
@@ -44,8 +44,8 @@ export default function Navbar() {
 											className={styles.icon}
 											src="img/fb.svg"
 											alt=""
-											width={16}
-											height={16}
+											width={20}
+											height={20}
 										/>
 									</Link>
 								</li>
@@ -76,7 +76,9 @@ export default function Navbar() {
 					<nav className={styles.navbar}>
 						<ul className={styles.lista}>
 							<li className={styles.item}>
-								<Link href="/products">Anillos</Link>
+								<Link className={styles.link_nav} href="/products">
+									Anillos
+								</Link>
 							</li>
 							<li className={styles.item}>
 								<Link href="/about">Nosotros</Link>
@@ -87,16 +89,16 @@ export default function Navbar() {
 						</ul>
 					</nav>
 					<div className={styles.contenedor_utilidades}>
-						<form action>
+						<form>
 							<input
 								className={styles.buscador}
 								type="text"
 								placeholder="Buscar"
 							/>
 						</form>
-						<Link href="/carro.html">
+						<Link href="/shoppingcart">
 							<Image
-								src="/img/ph_shopping-cart-simple.svg"
+								src="/img/carrito_compra.svg"
 								alt="icono-carrito-compra"
 								width={16}
 								height={16}
