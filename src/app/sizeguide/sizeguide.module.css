@@ -1,0 +1,117 @@
+/* guia de tallas */
+.titulo_talla_correcta{
+    padding-bottom: 20px;
+    padding-top: 25px;
+    text-align: center;
+    font-style: oblique;
+    color: black;
+    font: 19px Roboto;
+}
+.contenedor_guia_tallas{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+.cuerpo_guia {
+    font: 19px Roboto;
+    text-align: end;
+} 
+.imagen_banner{
+    margin: 40px;
+}
+.contenedor_cuerpo_guia{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+.coontenedor_nuestros_tips{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+.contenedor_tips_tallas{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    align-items: center;
+    margin: auto;
+    justify-items: end;
+}
+.boton_video{
+    color: #000;
+}
+.boton_video a{
+    color: #841030;
+    text-decoration: none;
+}
+.boton_video a:hover{
+    color: #841030;
+}
+.boton_video a:visited{
+    text-decoration: none;
+}
+.cuerpo_guia2 {
+    font-size: larger;
+    text-align: start;
+    
+}
+.imagen_banner2{
+    margin: 40px;
+    
+}
+.contenedor_tablas{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 480px) {
+    
+    .contenedor_guia_tallas{
+        display: flex;
+        flex-direction: column;
+    }
+    .cuerpo_guia{
+        text-align: center;
+        font-size: medium;
+    }
+
+    .contenedor_tips_tallas{
+        display: flex;
+        flex-direction:column-reverse;
+    }
+    .cuerpo_guia2{
+        text-align: center;
+        font-size:medium;
+    } 
+    .imagen_banner{
+        width: 90%;
+        height: 90%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+    .imagen_banner2{
+        width: 90%;
+        height: 90%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+    .contenedor_tablas{
+        display: flex;
+        height:auto;
+        flex-direction: column;
+        justify-items: center;
+    }
+    .contenedor_tablas img{
+        width: 330px;
+        height: auto;
+    }
+}
+
