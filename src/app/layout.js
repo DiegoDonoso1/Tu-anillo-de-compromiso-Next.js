@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import Navbar from './components/navbar';
 
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
@@ -18,7 +19,7 @@ const links = [
 	{
 		label: 'products',
 		route: '/products',
-	},
+	}
 ];
 
 export default function RootLayout({ children }) {

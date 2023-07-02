@@ -1,0 +1,27 @@
+.contenido_carrito{
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+    }
+    
+    .estado_carrito{
+        padding-bottom: 20px;
+        font-size: larger;
+    }
+    
+    .no_tienes_articulos{
+    font-size: 18px; 
+    padding: 10px;
+    }
+    .no_tienes_articulos a{
+        color: #000;
+        
+    }
+    .no_tienes_articulos a:hover{
+        color:#841030;
+    }
+    
+    @media only screen and (max-width: 480px) {
+
+        
+    }
