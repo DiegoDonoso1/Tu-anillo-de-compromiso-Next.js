@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import Navbar from './components/navbar';
+import Footer from './components/footer';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -19,7 +20,6 @@ const links = [
 	{
 		label: 'products',
 		route: '/products',
-	}
 ];
 
 export default function RootLayout({ children }) {
@@ -31,6 +31,7 @@ export default function RootLayout({ children }) {
 			<body className={inter.className}>
 				<Navbar />
 				{children}
+				<Footer />
 			</body>
 		</html>
 	);
