@@ -27,7 +27,7 @@
     bottom: 22%;
     left: 50%;
     transform: translateX(-50%);
-    width: 93%;
+    width: 100%;
     text-align: center;
     background-color: #ffc0cb;
     color: #000;
@@ -45,12 +45,12 @@
     right: 7px;
 }
 
-.card .cart-span::before{
+.card .cart_span::before{
     content: ' ';
-    width: 36px;
+    width: 38px;
     height: 36px;
     display: inline-block;
-    background-image: url(/img/ph_shopping-cart-simple.svg);
+    background-image: url('/img/carrito_compra.svg');
     background-size: 28px;
     background-repeat: no-repeat;
     background-position: 50%;

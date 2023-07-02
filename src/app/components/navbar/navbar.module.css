@@ -105,7 +105,7 @@
     border-radius: 10px;
     padding: 7px;
     width: 250px;
-    background-image: url(/prime_search.svg);
+    background-image: url('/img/icono_buscar.svg');
     background-repeat: no-repeat;
     background-position: 95%;
 }
@@ -135,15 +135,15 @@
     grid-column-end: 5;
 }
 
-.lista li a {
+.lista li a{
     text-decoration: none;
     position: relative;
-    font-weight: lighter;
+   /*  font-weight: lighter;  problemas con el hover con la fuente por defecto de next*/
     color: #7d7d7d;
     font-size: 21px;
 }
 
-.lista li a:hover{
+.item a:hover{
     color: #841030;
 }
 
@@ -158,4 +158,55 @@
     align-items: center;
     gap: 25px;
     grid-column: 5;
+}
+
+
+@media only screen and (max-width: 480px) {
+
+    .contenedor_superior{
+        display: block;
+    }
+
+    .contenedor_titulo{
+        justify-content: space-between;
+    }
+
+    .contenedor_titulo .button{
+        display: block;
+        cursor: pointer;
+    }
+    .svg{
+        width: 2em;
+        height: 2em;
+        padding: 0 20px;
+    }
+
+    .contenedor_superior .navbar{
+        flex-direction: column;
+        /* display: none; */
+        width: 100%;
+        height: 0;
+        pointer-events: none;
+        overflow: hidden;
+        transition: all .5s ease;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .contenedor_superior .navbar.activo{
+        /* display: block; */
+        height: 50vh;
+        pointer-events: auto;
+    }
+
+    .contenedor_superior .lista{
+        flex-flow: column;
+    }
+
+    .contenedor_superior .contenedor_utilidades{
+        padding: 10px 0;
+    }
 }
