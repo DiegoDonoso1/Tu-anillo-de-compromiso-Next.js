@@ -1,0 +1,52 @@
+
+.sobre_nosotros {
+    text-align: center;
+    background-color: #fff;
+    width: 80%;
+    margin: auto;
+}
+
+.izquierda {
+    margin-right: 0;
+    width: 280px;
+}
+
+.texto {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    text-align: end;
+    gap: 50px;
+}
+
+.derecha {
+    margin-left: 0;
+    width: 280px;
+}
+
+.texto2 {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    gap: 50px;
+    margin: 25px 0;
+}
+.parrafo {
+    width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .sobre-nosotros{
+        width: 80%;
+    }
+    .texto {
+        flex-flow: column;
+        text-align: center;
+    }
+
+    .texto2 {
+        flex-flow: column-reverse;
+        text-align: center;
+    }
+  }
