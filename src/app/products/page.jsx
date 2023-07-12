@@ -2,10 +2,14 @@ import React from 'react';
 import Card from '../components/card';
 import style from './products.module.css';
 import Link from 'next/link';
+import Cinta from '../components/cinta';
+import { getItems } from '../services/itemService';
 
-export default function page() {
+export default async function page() {
+	const data = await getItems();
 	return (
 		<>
+			<Cinta />
 			<aside className={style.menu_filtros}>
 				<h3>Materiales</h3>
 				<ul>
@@ -48,14 +52,9 @@ export default function page() {
 			</section>
 
 			<main className={style.container_anillo}>
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
-				<Card />
+				{data.map((item) => (
+					<Card props={item} />
+				))}
 			</main>
 
 			<section className={style.container_paginas}>
@@ -68,3 +67,8 @@ export default function page() {
 		</>
 	);
 }
+
+Cinta.defaultProps = {
+	titulo_pagina: 'Anillos',
+	boton_volver: 'Volver a la tienda',
+};

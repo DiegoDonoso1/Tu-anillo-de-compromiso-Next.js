@@ -1,9 +1,18 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import styles from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useAppContext } from '../statewrapper';
 
 export default function Navbar() {
+	const cart = useAppContext();
+	const [activo, setActivo] = useState(false);
+
+	const handleButtonClick = () => {
+		setActivo(!activo);
+	};
+
 	return (
 		<>
 			<header>
@@ -32,7 +41,7 @@ export default function Navbar() {
 										<Image
 											className={styles.icon}
 											src="/img/ig-icon.svg"
-											alt=""
+											alt="icono-instagram"
 											width={20}
 											height={20}
 										/>
@@ -42,8 +51,8 @@ export default function Navbar() {
 									<Link href="#">
 										<Image
 											className={styles.icon}
-											src="img/fb.svg"
-											alt=""
+											src="/img/fb.svg"
+											alt="icono-facebook"
 											width={20}
 											height={20}
 										/>
@@ -63,17 +72,19 @@ export default function Navbar() {
 								height={100}
 							/>
 						</Link>
-						<button className={styles.button}>
+						<button className={styles.button} onClick={handleButtonClick}>
 							<Image
 								className={styles.svg}
-								src="/img/icons8-menu(1).svg"
-								alt=""
-								width={16}
-								height={16}
+								src="/img/hamburguesa.svg"
+								alt="menu-hamburguesa"
+								width={70}
+								height={70}
 							/>
 						</button>
 					</div>
-					<nav className={styles.navbar}>
+					<nav
+						className={`${styles.navbar} ${activo ? `${styles.activo}` : ''}`}
+					>
 						<ul className={styles.lista}>
 							<li className={styles.item}>
 								<Link className={styles.link_nav} href="/products">
@@ -85,6 +96,9 @@ export default function Navbar() {
 							</li>
 							<li className={styles.item}>
 								<Link href="#">Contactanos</Link>
+							</li>
+							<li className={styles.item}>
+								<Link href="/dashboard">Administrar</Link>
 							</li>
 						</ul>
 					</nav>
@@ -100,9 +114,10 @@ export default function Navbar() {
 							<Image
 								src="/img/carrito_compra.svg"
 								alt="icono-carrito-compra"
-								width={16}
-								height={16}
+								width={25}
+								height={25}
 							/>
+							({cart.getNumberOfItems()})
 						</Link>
 					</div>
 				</div>

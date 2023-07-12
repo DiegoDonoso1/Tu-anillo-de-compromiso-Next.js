@@ -159,7 +159,7 @@
 
 .cambiar_pagina{
     display: flex;
-    align-items: center;
+    align-items: center;  
     gap: 10px;
 }
 
@@ -168,7 +168,7 @@
     font-weight: 500;
 }
 .cambiar_pagina button{
-    background-color: #F2E1E6;
+    background-color:  #fd7e7e42;
     padding: 0.5rem 1rem;
     font-size: 18px;
     border-radius: 20px;

@@ -50,8 +50,8 @@
 }
 
 .phone_icon{
-    height: 16px;
-    width: 16px;
+    height: auto;
+    width: auto;
 }
 
 .phone{
@@ -176,8 +176,7 @@
         cursor: pointer;
     }
     .svg{
-        width: 2em;
-        height: 2em;
+        
         padding: 0 20px;
     }
 
@@ -189,7 +188,6 @@
         pointer-events: none;
         overflow: hidden;
         transition: all .5s ease;
-
         display: flex;
         flex-flow: column nowrap;
         justify-content: center;
@@ -198,7 +196,7 @@
     }
     .contenedor_superior .navbar.activo{
         /* display: block; */
-        height: 50vh;
+        height: 30vh;
         pointer-events: auto;
     }
 

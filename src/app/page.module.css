@@ -44,6 +44,43 @@
   background-color: #841030;
 }
 
+.container_categoria{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.titulo_categorias{
+  text-align: center;
+  margin: 20px;
+  font-weight: 400;
+}
+
+.categoria{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mensaje{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+  margin: 50px auto;
+}
+
+.parrafo_mensaje{
+  width: 40%;
+}
+
+.titulo_sugerencia{
+  text-align: center;
+  margin: 20px;
+  font-weight: 400;
+}
+
 
 .container_sugerencia{
   display: flex;
@@ -62,6 +99,25 @@
   
   .contenido_main{
     text-align: center;
+  }
+
+  .container_categoria{
+    flex-direction: column;
+  }
+
+  .container_sugerencia{
+    flex-direction: column;
+  }
+
+  .mensaje{
+    flex-direction: column;
+  }
+
+  .mensaje img{
+    width: 350px;
+  }
+  .parrafo_mensaje{
+    width: auto;
   }
   }
 

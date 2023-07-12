@@ -1,10 +1,21 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import style from './detail.module.css';
-import Card from '../components/card';
+import Card from '../../components/card';
+import { getItemsById } from '../../services/itemService';
+import { useAppContext } from '@/app/components/statewrapper';
 
-export default function Detail() {
+export default async function Detail({ params }) {
+	const cart = useAppContext();
+	const id = params.id;
+	const data = await getItemsById(id);
+
+	function handleClick() {
+		cart.addItemToCart(data);
+	}
+
 	return (
 		<>
 			<main>
@@ -18,7 +29,7 @@ export default function Detail() {
 						/>
 					</div>
 					<div className={style.detalle}>
-						<h2 className={style.titulo_anillo}>Anillo Con Piedra Marcacite</h2>
+						<h2 className={style.titulo_anillo}>{data.nombre}</h2>
 						<p className={style.material_anillo}>Joyas Metal: Plata Fina Ley</p>
 						<label className={style.label_talla} htmlFor="talla">
 							Elige tu talla:
@@ -29,7 +40,7 @@ export default function Detail() {
 						</select>
 						<div className={style.guia_tallas}>
 							<Image src="/img/ruler.svg" alt="" width={30} height={30} />
-							<Link className={style.link_tallas} href="/guia-de-tallas.html">
+							<Link className={style.link_tallas} href="/sizeguide">
 								{' '}
 								<span>¿Cuál es mi talla?</span>
 							</Link>
@@ -37,8 +48,10 @@ export default function Detail() {
 						<h3 className={style.stock_anillo}>
 							Stock: <span>En Stock</span>
 						</h3>
-						<p className={style.precio_anillo}>$20000</p>
-						<button className={style.boton_carrito}>Agregar al carro</button>
+						<p className={style.precio_anillo}>{data.precio}</p>
+						<button className={style.boton_carrito} onClick={handleClick}>
+							Agregar al carro
+						</button>
 						<div className={style.envio}>
 							<Image
 								src="/img/shipping-fast.svg"
@@ -60,15 +73,7 @@ export default function Detail() {
 				</div>
 
 				<div className={style.descripcion}>
-					<p>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ipsa
-						libero explicabo exercitationem doloremque quo nam, voluptate
-						adipisci sequi amet, placeat ipsum vitae? Modi, labore. Optio vel
-						doloremque autem enim. Lorem ipsum dolor sit amet consectetur
-						adipisicing elit. Reprehenderit esse culpa beatae dolor molestiae
-						deleniti dignissimos commodi laudantium mollitia cumque dicta minima
-						sit illo tempora atque impedit, in rem quia.
-					</p>
+					<p>{data.descripcion}</p>
 				</div>
 			</main>
 

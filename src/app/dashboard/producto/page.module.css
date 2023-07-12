@@ -1,0 +1,38 @@
+
+.table{
+    background-color: white;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.filas {
+    padding: 20px;
+}
+
+.filas th, .filas td{
+    padding: 20px;
+}
+
+.thead{
+    background-color: #246355;
+    border-bottom: solid 5px #0f362d;
+    color: white;
+}
+
+.filas:nth-child(even){
+    background-color: #ddd;
+}
+
+.filas:hover{
+    background-color: #369681;
+    color: white;
+}
+
+.button{
+    padding: 10px;
+    margin: 5px;
+    background-color: #f1f1;
+    cursor: pointer;
+}

@@ -1,3 +1,7 @@
+.carro{
+    height: 50vh;
+}
+
 .contenido_carrito{
     justify-content: center;
     padding: 50px;
@@ -22,6 +26,8 @@
     }
     
     @media only screen and (max-width: 480px) {
-
+        .carro{
+            height: auto;
+        }
         
     }
