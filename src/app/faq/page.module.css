@@ -12,7 +12,7 @@
     transition: ease 1s;
     position: relative;
     font-weight: bold;
-    color: #2c2b2b;
+    color: #b26a7e;
 }
 
 .pr_label:hover {
@@ -56,7 +56,7 @@
     justify-content: center;
     display: block;
     width: 80%;
-    height: 59vh;
+    height: auto;
     margin: auto;
 }
 
@@ -113,4 +113,13 @@
         height: auto;
     }
 
+}
+
+.pr_main{
+    max-height: auto;
+}
+
+.pr_a:link , .pr_a:visited , .f_pr:hover , .pr_a:active {
+    text-decoration: none;
+    color: #902341;
 }
