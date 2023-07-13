@@ -1,9 +1,17 @@
+'use client';
+
 import { getItems } from '@/app/services/itemService';
 import styles from './page.module.css';
-import React from 'react';
+import { useRouter } from 'next/navigation';
 
 export default async function page() {
+	const router = useRouter();
 	const data = await getItems();
+
+	/* const handleClick = (e) => {
+		router.push(`/${e.target.id}`);
+	}; */
+
 	return (
 		<table className={styles.table}>
 			<thead className={styles.thead}>
@@ -17,14 +25,22 @@ export default async function page() {
 			</thead>
 			<tbody>
 				{data.map((anillo) => (
-					<tr className={styles.filas}>
+					<tr key={anillo.id} className={styles.filas}>
 						<td>{anillo.nombre}</td>
 						<td>{anillo.precio}</td>
 						<td>{anillo.descripcion}</td>
 						<td>{anillo.categoria.categoria}</td>
 
 						<td>
-							<button className={styles.button}>Editar</button>
+							<button
+								id={anillo.id}
+								onClick={() =>
+									router.replace(`/dashboard/producto/${anillo.id}`)
+								}
+								className={styles.button}
+							>
+								Editar
+							</button>
 							<button className={styles.button}>Eliminar</button>
 						</td>
 					</tr>

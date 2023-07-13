@@ -1,5 +1,7 @@
 export async function getItems() {
-	const request = await fetch('http://localhost:8080/anillos/obtener');
+	const request = await fetch('http://localhost:8080/anillos/obtener', {
+		next: { revalidate: 3600 },
+	});
 	const items = await request.json();
 
 	return items;

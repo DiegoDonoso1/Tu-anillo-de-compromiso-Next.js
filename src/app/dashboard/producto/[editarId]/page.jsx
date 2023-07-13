@@ -1,6 +1,8 @@
 'use client';
 import { getCategory, putProducts } from '@/app/services/itemService';
 import React, { useEffect, useState } from 'react';
+import style from './editarId.module.css';
+import { Image } from 'react-bootstrap';
 
 const MyForm = (params) => {
 	const id = params.params.editarId;
@@ -60,56 +62,90 @@ const MyForm = (params) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<label htmlFor="name">Nombre</label>
-			<input
-				type="text"
-				id="name"
-				name="nombre"
-				onChange={handleChange}
-				value={formData.nombre}
-			/>
-			<br />
-			<label htmlFor="precio">Precio</label>
-			<input
-				type="number"
-				id="precio"
-				name="precio"
-				onChange={handleChange}
-				value={formData.precio}
-			/>
-			<br />
-			<label htmlFor="desc">Descripción</label>
-			<input
-				type="text"
-				id="desc"
-				name="descripcion"
-				onChange={handleChange}
-				value={formData.descripcion}
-			/>
-			<br />
-			<label htmlFor="categoria">Categoría</label>
-			{category ? (
-				<select
-					name="categoria"
-					id="categoria"
-					onChange={handleChange}
-					value={formData.categoriaAnillo.id}
-				>
-					{category.map((categoria) => (
-						<option key={categoria.id} value={categoria.id}>
-							{categoria.nombreCategoria}
-						</option>
-					))}
+		<div className={style.container}>
+			<form className={style.form} onSubmit={handleSubmit}>
+				<div className={style.card}>
+					<div className={style.card_title}>titulo</div>
+					<div className={style.form_group}>
+						<input
+							type="text"
+							id="name"
+							name="nombre"
+							className={style.form_field}
+							onChange={handleChange}
+							value={formData.nombre}
+							required
+						/>
+						<label className={style.form_label} htmlFor="name">
+							Nombre
+						</label>
+					</div>
 
-					{/* opciones de categoría */}
-				</select>
-			) : (
-				<p>cargando categorias...</p>
-			)}
-			<br />
-			<button>Editar</button>
-		</form>
+					<div className={style.form_group}>
+						<input
+							type="number"
+							id="precio"
+							name="precio"
+							className={style.form_field}
+							onChange={handleChange}
+							value={formData.precio}
+							required
+						/>
+						<label className={style.form_label} htmlFor="precio">
+							Precio
+						</label>
+					</div>
+
+					<div className={style.form_group}>
+						<input
+							type="text"
+							id="desc"
+							name="descripcion"
+							className={style.form_field}
+							onChange={handleChange}
+							value={formData.descripcion}
+							required
+						/>
+						<label className={style.form_label} htmlFor="desc">
+							Descripción
+						</label>
+					</div>
+
+					<div className={style.select}>
+						<label htmlFor="categoria">Categoría</label>
+						{category ? (
+							<select
+								name="categoria"
+								id="categoria"
+								className={style.selectopt}
+								onChange={handleChange}
+								value={formData.categoriaAnillo.id}
+							>
+								{category.map((categoria) => (
+									<option
+										className={style.option}
+										key={categoria.id}
+										value={categoria.id}
+									>
+										{categoria.nombreCategoria}
+									</option>
+								))}
+
+								{/* opciones de categoría */}
+							</select>
+						) : (
+							<p>cargando categorias...</p>
+						)}
+					</div>
+					<div className={style.card_action}>
+						<button className={style.btn}>Editar</button>
+					</div>
+				</div>
+			</form>
+			<div className={style.image_product}>
+				<Image src="/img/anilloCarousel.png" width={500} height={500} />
+			</div>
+		</div>
 	);
 };
 

@@ -110,7 +110,7 @@ export default function Navbar() {
 								placeholder="Buscar"
 							/>
 						</form>
-						<Link href="/shoppingcart">
+						<Link key={cart.getNumberOfItems()} href="/shoppingcart">
 							<Image
 								src="/img/carrito_compra.svg"
 								alt="icono-carrito-compra"

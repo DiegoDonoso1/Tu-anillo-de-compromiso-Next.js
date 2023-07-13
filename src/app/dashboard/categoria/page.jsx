@@ -4,7 +4,6 @@ import { getCategory } from '@/app/services/itemService';
 
 export default async function page() {
 	const data = await getCategory();
-	console.log(data);
 	return (
 		<table className={styles.table}>
 			<thead className={styles.thead}>
@@ -15,19 +14,17 @@ export default async function page() {
 				</tr>
 			</thead>
 			<tbody>
-				<tr className={styles.filas}>
-					{data.map((categoria) => (
-						<>
-							<td>{categoria.id}</td>
-							<td>{categoria.nombreCategoria}</td>
-						</>
-					))}
+				{data.map((categoria) => (
+					<tr className={styles.filas}>
+						<td>{categoria.id}</td>
+						<td>{categoria.nombreCategoria}</td>
 
-					<td>
-						<button className={styles.button}>Editar</button>
-						<button className={styles.button}>Eliminar</button>
-					</td>
-				</tr>
+						<td>
+							<button className={styles.button}>Editar</button>
+							<button className={styles.button}>Eliminar</button>
+						</td>
+					</tr>
+				))}
 			</tbody>
 		</table>
 	);
