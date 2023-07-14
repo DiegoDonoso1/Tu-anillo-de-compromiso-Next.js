@@ -12,7 +12,7 @@
     transition: ease 1s;
     position: relative;
     font-weight: bold;
-    color: #b26a7e;
+    color: #a05d70;
 }
 
 .pr_label:hover {
@@ -58,6 +58,7 @@
     width: 80%;
     height: auto;
     margin: auto;
+    padding-bottom: 20px;
 }
 
 .pr_cinta {

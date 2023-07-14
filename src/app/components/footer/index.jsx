@@ -84,21 +84,21 @@ export default function Footer() {
 						<div className={styles.f_cuatro}>
 							<input className={styles.f_input} type="checkbox" id="f_acord3" />
 							<label className={styles.f_label} htmlFor="f_acord3">
-								Atencion Personalizada
+								Atención Personalizada
 							</label>
 							<div className={styles.f_contenido}>
 								<p className={styles.f_texto}>
-									¡Hablanos! Queremos saber de tí.
+									¡Háblanos! Queremos saber de tí.
 								</p>
 								<p className={styles.f_texto}>
-									Horario de atencion: 00:00 - 00:00
+									Horario de atención: 00:00 - 00:00
 								</p>
 							</div>
 						</div>
 						<div className={styles.f_cinco}>
 							<input className={styles.f_input} type="checkbox" id="f_acord4" />
 							<label className={styles.f_label} htmlFor="f_acord4">
-								Envios
+								Envíos
 							</label>
 							<div className={styles.f_contenido}>
 								<p className={styles.f_texto}>

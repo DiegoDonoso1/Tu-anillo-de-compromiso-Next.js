@@ -6,7 +6,8 @@
 }
 
 .form{
-    flex: 1;
+  flex: 1;
+  padding-bottom: 20px;
 }
 
 .card {
@@ -25,10 +26,12 @@
     line-height: 40px;
     padding: 10px 20px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.7);
+    color: #841030;
+    background-color: #fd7e7e42;
   }
   .card_title {
     border-bottom: 1px solid #ddd;
+    text-align: center;
   }
   .card_action {
     text-align: right;
@@ -37,7 +40,7 @@
   
   .btn {
     border: none;
-    background-color: var(--success-color);
+    background-color: #841031c9;
     padding: 0 25px;
     font-size: 14px;
     cursor: pointer;
@@ -48,12 +51,12 @@
     letter-spacing: 3px;
     height: 40px;
     line-height: 40px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.986);
   }
   
   /* On mouse-over */
   .btn:hover {
-    background: var(--successhover-color);
+    background: #841031;
   }
   
   .card_text {
@@ -62,29 +65,33 @@
     position: relative;
     padding: 15px 0 0;
     margin-top: 10px;
+    
   }
   
   .form_group {
-    position: relative;
+    position:relative;
     padding: 15px 0 0;
-    margin-top: 10px;
+    text-align: center;
+    margin:auto;
+    width: 90%;
   }
-  
+
   .form_field {
     font-family: inherit;
-    width: 100%;
-    font-size: 16px;
+    width: 90%;
+    font-size: 15px;
     padding: 7px 15px;
     background: transparent;
     transition: border-color 0.2s;
-    width: 80%;
     margin: 0 0 1em 0;
-    border: 1px solid #818181;
+    border: 1px solid #841030;
     resize: none;
     outline: none;
     border-radius: 3px;
+    
+    
   }
-  
+
   .form_group input[type="file"]::file-selector-button {
     margin-right: 20px;
     background: transparent;
@@ -115,17 +122,18 @@
     position: absolute;
     height: 20px;
     top: 6px;
-    left: 8px;
+    left: 75px;
     padding: 3px 3px 0 3px;
     display: block;
     transition: 0.2s;
-    font-size: 12px;
-    color: #9b9b9b;
+    font-size: 13px;
+    color: #1a1a1a;
     background: linear-gradient(to top, transparent, #fff, #fff);
+    
   }
   
   .form_field:focus ~ .form_label {
-    color: var(--error-color);
+    color: #1a1a1a;
   }
   
   .form_field:focus {
@@ -133,11 +141,11 @@
   }
   
   .form_field:valid {
-    border-color: var(--success-color);
+    border-color: #1a1a1a;
   }
   
   .form_field:valid ~ .form_label {
-    color: var(--success-color);
+    color: #841030;
 }
 
 .select{
@@ -146,11 +154,21 @@
     position:relative;
     width:250px;
     height:40px;
+    text-align: center;
+    margin: auto;
+    font-size: 13px;
+    height: 65px;
 }
 
 .selectopt{
-    background-color: #ffffff;
+  background-color: #f8e8f0;
+  border: 1px solid #841030;
+  border-radius: 2px;
   background-image: none;
+  text-align: center;
+  height: 30px;
+  
+
 }
 
 .option {
@@ -174,9 +192,8 @@
 }
 
 .option:hover {
-    background:#666;
+    background:#8f8e8e;
 }
-
 .select:focus .option {
     position:relative;
     pointer-events:all;
@@ -223,4 +240,6 @@
     display: flex;
     justify-content: center;
     flex: 1;
+    padding-bottom: 45px;
+    padding-top: 45px;
 }

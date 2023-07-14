@@ -10,7 +10,7 @@ export default function Faq() {
 					<div className={styles.pr_acord_container}>
 						<input className={styles.pr_input} type="checkbox" id="Titulo1" />
 						<label className={styles.pr_label} htmlFor="Titulo1">
-							¿De donde somos?
+							¿De dónde somos?
 						</label>
 						<div className={styles.Contenido_Acordeon}>
 							<p>
@@ -25,7 +25,7 @@ export default function Faq() {
 						</label>
 						<div className={styles.Contenido_Acordeon}>
 							<p>
-							Si, hacemos entregas presenciales en Freire, Pitrufquén y Temuco.
+							Sí, hacemos entregas presenciales en Freire, Pitrufquén y Temuco.
 
 							</p>
 						</div>
@@ -38,7 +38,7 @@ export default function Faq() {
 						</label>
 						<div className={styles.Contenido_Acordeon}>
 							<p>
-								Si, a todo Chile, a través de Starken a domicilio o sucursal (por pagar) 
+								Sí, a todo Chile, a través de Starken, a domicilio o sucursal (por pagar). 
 							</p>
 						</div>
 					</div>
@@ -84,7 +84,7 @@ export default function Faq() {
 							<p>
 							Tenemos una guía disponible en la página, y un video explicativo. Para revisarlos haz </p>
 							<Link className={styles.pr_a} href="/sizeguide">
-											click aqui
+											click aquí
 										</Link>
 							
 						</div>

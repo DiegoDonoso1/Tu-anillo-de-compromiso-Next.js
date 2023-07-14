@@ -1,7 +1,10 @@
 
-.f_a:link , .f_a:visited , .f_a:hover , .f_a:active {
+.f_a:link , .f_a:visited, .f_a:active {
     text-decoration: none;
     color: #F2F2F0;
+}
+.f_a:hover{
+    color: #841030;
 }
 
 .f_redes{
