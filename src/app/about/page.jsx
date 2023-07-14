@@ -63,6 +63,6 @@ export default function About() {
 }
 
 Cinta.defaultProps = {
-	titulo_pagina: 'Sobre nosotros',
+	titulo_pagina: 'SOBRE NOSOTROS',
 	boton_volver: 'Volver a la tienda',
 };

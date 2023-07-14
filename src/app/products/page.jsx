@@ -69,6 +69,6 @@ export default async function page() {
 }
 
 Cinta.defaultProps = {
-	titulo_pagina: 'Anillos',
+	titulo_pagina: 'ANILLOS',
 	boton_volver: 'Volver a la tienda',
 };

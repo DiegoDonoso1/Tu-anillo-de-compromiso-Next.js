@@ -65,7 +65,7 @@ const MyForm = (params) => {
 		<div className={style.container}>
 			<form className={style.form} onSubmit={handleSubmit}>
 				<div className={style.card}>
-					<div className={style.card_title}>titulo</div>
+					<div className={style.card_title}> Editar producto </div>
 					<div className={style.form_group}>
 						<input
 							type="text"
@@ -111,6 +111,22 @@ const MyForm = (params) => {
 						</label>
 					</div>
 
+					{/* imagen */}
+					<div className={style.form_group}>
+            <input
+            type="file"
+            id="file"
+            className={style.form_field}
+            placeholder="Nombre"
+            accept="image/*"
+            required
+            />
+            <label htmlFor="file" className={style.form_label}>
+            Imagen
+            </label>
+        </div>
+		{/* fin de carga de imagenes */}
+
 					<div className={style.select}>
 						<label htmlFor="categoria">Categoría</label>
 						{category ? (
@@ -143,7 +159,7 @@ const MyForm = (params) => {
 				</div>
 			</form>
 			<div className={style.image_product}>
-				<Image src="/img/anilloCarousel.png" width={500} height={500} />
+				<Image src="/img/20230616_214445.jpg" width={350} height={350} />
 			</div>
 		</div>
 	);
