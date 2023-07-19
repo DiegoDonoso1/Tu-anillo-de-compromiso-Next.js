@@ -124,6 +124,7 @@
     top: 6px;
     left: 75px;
     padding: 3px 3px 0 3px;
+    display: block;
     transition: 0.2s;
     font-size: 13px;
     color: #1a1a1a;
