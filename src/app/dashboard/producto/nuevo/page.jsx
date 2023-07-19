@@ -1,8 +1,10 @@
 'use client';
-import { getCategory, putProducts } from '@/app/services/itemService';
+import { getCategory, postProducts } from '@/app/services/itemService';
 import React, { useEffect, useState } from 'react';
-import style from './editarId.module.css';
+import style from './nuevo.module.css';
 import { Image } from 'react-bootstrap';
+
+
 
 const MyForm = (params) => {
 	const id = params.params.editarId;
@@ -16,6 +18,7 @@ const MyForm = (params) => {
 	});
 
 	const [category, setCategory] = useState();
+    const [imagen, setImagen] = useState(false);
 
 	useEffect(() => {
 		const fetchCategory = async () => {
@@ -50,12 +53,12 @@ const MyForm = (params) => {
 				id: formData.categoria,
 			},
 		};
-		putProducts(formattedData, id)
+		postProducts(formattedData, formData.categoria)
 			.then(() => {
-				console.log('Producto actualizado');
+				console.log('Producto creado');
 			})
 			.catch((error) => {
-				console.error('Error al actualizar el producto:', error);
+				console.error('Error al crear el producto:', error);
 				// Manejar el error de actualización del producto
 			});
 		console.log(formData);
@@ -65,7 +68,7 @@ const MyForm = (params) => {
 		<div className={style.container}>
 			<form className={style.form} onSubmit={handleSubmit}>
 				<div className={style.card}>
-					<div className={style.card_title}> Editar producto </div>
+					<div className={style.card_title}> Crear producto </div>
 					<div className={style.form_group}>
 						<input
 							type="text"
@@ -135,7 +138,7 @@ const MyForm = (params) => {
 								id="categoria"
 								className={style.selectopt}
 								onChange={handleChange}
-								value={formData.categoriaAnillo.id}
+								
 							>
 								{category.map((categoria) => (
 									<option
@@ -154,13 +157,15 @@ const MyForm = (params) => {
 						)}
 					</div>
 					<div className={style.card_action}>
-						<button className={style.btn}>Editar</button>
+						<button className={style.btn}>Crear</button>
 					</div>
 				</div>
 			</form>
-			<div className={style.image_product}>
+            {
+                imagen ? <div className={style.image_product}>
 				<Image src="/img/20230616_214445.jpg" width={350} height={350} />
-			</div>
+			</div> : <div className={style.image_product}> Esperando imagen </div>
+            }
 		</div>
 	);
 };

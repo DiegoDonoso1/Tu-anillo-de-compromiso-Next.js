@@ -27,3 +27,12 @@ export async function putProducts(categoryData, id) {
 		body: JSON.stringify(categoryData),
 	});
 }
+export async function postProducts(categoryData, id) {
+	const request = await fetch(`http://localhost:8080/anillos/nuevo/${id}`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(categoryData),
+	});
+}

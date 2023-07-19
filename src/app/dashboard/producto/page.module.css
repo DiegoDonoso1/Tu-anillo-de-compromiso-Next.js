@@ -16,23 +16,53 @@
 }
 
 .thead{
-    background-color: #246355;
-    border-bottom: solid 5px #0f362d;
-    color: white;
+    background-color: #fd7e7e42;
+    border-bottom: solid 3px #fd7e7e62;
+    color: #841030;
 }
 
 .filas:nth-child(even){
-    background-color: #ddd;
+    background-color: #F2E1E6;
 }
 
 .filas:hover{
-    background-color: #369681;
-    color: white;
+    background-color: #fd7e7e27;
+    color: black;
 }
 
 .button{
     padding: 10px;
     margin: 5px;
-    background-color: #f1f1;
+    background-color: #c9466bd7;
+    color: rgba(255, 255, 255, 0.986);
     cursor: pointer;
+}
+.button_eliminar{
+    padding: 10px;
+    margin: 5px;
+    background-color: #d32a38e7;
+    color: rgba(255, 255, 255, 0.986);
+    cursor: pointer;
+}
+.button_crear{
+    border: none;
+    background-color: #841031c9;
+    padding: 0 25px;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    height: 40px;
+    line-height: 40px;
+    color: rgba(255, 255, 255, 0.986);
+    position: absolute;
+    right: 18%;
+}
+
+.container_crear{
+    padding-bottom: 20px;
+    width: 80%;
 }
