@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './categoria.module.css';
-import { getCategory } from '@/app/services/itemService';
+import { getCategory } from '../../services/itemService';
 
 export default async function page() {
 	const data = await getCategory();

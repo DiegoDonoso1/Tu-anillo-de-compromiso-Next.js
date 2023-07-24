@@ -27,7 +27,25 @@ export default function Card({ props }) {
 					<p className={style.precio_anillo}>{props.precio}</p>
 				</div>
 			) : (
-				<h1>waiting</h1>
+				<div className={style.card}>
+					<Link href="/">
+						<Image
+							src="/img/20230621_160101.jpg"
+							alt="imagen anillo"
+							width={260}
+							height={260}
+						/>
+						<div className={style.mesage}>Comprar</div>
+					</Link>
+					<div className={style.cart}>
+						<Link href="#">
+							<span className={style.cart_span}></span>
+						</Link>
+					</div>
+					<p className={style.categoria_anillo}>Plata</p>
+					<h2 className={style.titulo_anillo}>Anillo de plata corazon </h2>
+					<p className={style.precio_anillo}>35.000</p>
+				</div>
 			)}
 		</div>
 	);

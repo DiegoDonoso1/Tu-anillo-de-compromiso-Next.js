@@ -1,21 +1,33 @@
 'use client';
-import { getCategory, putProducts } from '@/app/services/itemService';
+import { getCategory, getTalla, putProducts } from '@/app/services/itemService';
 import React, { useEffect, useState } from 'react';
 import style from './editarId.module.css';
 import { Image } from 'react-bootstrap';
+import { useRouter } from 'next/navigation';
 
 const MyForm = (params) => {
 	const id = params.params.editarId;
+	const [category, setCategory] = useState();
+	const [talla, setTalla] = useState();
+	const [isOptionSelected, setIsOptionSelected] = useState(false);
+	const router = useRouter();
 	const [formData, setFormData] = useState({
 		nombre: '',
 		precio: '',
 		descripcion: '',
+		imagen: '',
 		categoriaAnillo: {
-			id: '',
+			id,
 		},
 	});
 
-	const [category, setCategory] = useState();
+	const [formDataTalla, setFormDataTalla] = useState({
+		numeroTalla: '',
+		stock: '',
+		anilloTalla: {
+			id: id,
+		},
+	});
 
 	useEffect(() => {
 		const fetchCategory = async () => {
@@ -31,12 +43,31 @@ const MyForm = (params) => {
 		fetchCategory();
 	}, []);
 
+	useEffect(() => {
+		const fetchTalla = async () => {
+			try {
+				//anidar try catch con getItemById
+				const items = await getTalla();
+				setTalla(items);
+			} catch (error) {
+				console.log('Error al obtener las categorias:', error);
+			}
+		};
+
+		fetchTalla();
+	}, []);
+
 	const handleChange = (event) => {
 		const { name, value } = event.target;
 		setFormData((prevFormData) => ({
 			...prevFormData,
 			[name]: value,
 		}));
+		setFormDataTalla((prevFormData) => ({
+			...prevFormData,
+			[name]: value != '' ? value : null,
+		}));
+		setIsOptionSelected(value !== '');
 	};
 
 	const handleSubmit = (e) => {
@@ -46,19 +77,28 @@ const MyForm = (params) => {
 			nombre: formData.nombre,
 			precio: formData.precio,
 			descripcion: formData.descripcion,
+			imagen: formData.imagen,
 			categoriaAnillo: {
-				id: formData.categoria,
+				id: formData.categoriaAnillo.id,
 			},
 		};
-		putProducts(formattedData, id)
+		const formattedDataTalla = {
+			numeroTalla: formDataTalla.numeroTalla,
+			stock: formDataTalla.stock,
+			anilloTalla: {
+				id,
+			},
+		};
+		/* putProducts(formattedData, id)
 			.then(() => {
-				console.log('Producto actualizado');
+				router.push('/dashboard/producto');
 			})
 			.catch((error) => {
 				console.error('Error al actualizar el producto:', error);
 				// Manejar el error de actualización del producto
-			});
-		console.log(formData);
+			}); */
+		console.log(formattedData);
+		console.log(formattedDataTalla);
 	};
 
 	return (
@@ -111,48 +151,91 @@ const MyForm = (params) => {
 						</label>
 					</div>
 
+					<div className={style.form_group}>
+						<input
+							type="number"
+							id="stock"
+							name="stock"
+							className={style.form_field}
+							onChange={handleChange}
+							value={formDataTalla.stock}
+							required
+						/>
+						<label className={style.form_label} htmlFor="stock">
+							Stock
+						</label>
+					</div>
+
 					{/* imagen */}
 					<div className={style.form_group}>
-            <input
-            type="file"
-            id="file"
-            className={style.form_field}
-            placeholder="Nombre"
-            accept="image/*"
-            required
-            />
-            <label htmlFor="file" className={style.form_label}>
-            Imagen
-            </label>
-        </div>
-		{/* fin de carga de imagenes */}
-
-					<div className={style.select}>
-						<label htmlFor="categoria">Categoría</label>
-						{category ? (
-							<select
-								name="categoria"
-								id="categoria"
-								className={style.selectopt}
-								onChange={handleChange}
-								value={formData.categoriaAnillo.id}
-							>
-								{category.map((categoria) => (
-									<option
-										className={style.option}
-										key={categoria.id}
-										value={categoria.id}
-									>
-										{categoria.nombreCategoria}
-									</option>
-								))}
-
-								{/* opciones de categoría */}
-							</select>
-						) : (
-							<p>cargando categorias...</p>
-						)}
+						<input
+							type="file"
+							id="imagen"
+							name="imagen"
+							className={style.form_field}
+							placeholder="imagen"
+							accept="image/*"
+							onChange={handleChange}
+							value={formData.imagen}
+							required
+						/>
+						<label htmlFor="file" className={style.form_label}>
+							Imagen
+						</label>
 					</div>
+					{/* fin de carga de imagenes */}
+
+					<div>
+						<div className={style.select}>
+							<label htmlFor="categoria">Categoría</label>
+							{category ? (
+								<select
+									name="categoriaAnillo"
+									id="categoriaAnillo"
+									className={style.selectopt}
+									onChange={handleChange}
+								>
+									{category.map((categoria) => (
+										<option
+											className={style.option}
+											key={categoria.id}
+											value={categoria.id}
+										>
+											{categoria.nombreCategoria}
+										</option>
+									))}
+
+									{/* opciones de categoría */}
+								</select>
+							) : (
+								<p>cargando categorias...</p>
+							)}
+						</div>
+
+						<div className={style.select}>
+							<label htmlFor="categoria">Tallas</label>
+
+							{talla ? (
+								<select
+									name="numeroTalla"
+									id="numeroTalla"
+									className={style.selectopt}
+									onChange={handleChange}
+									value={formDataTalla.numeroTalla || ''}
+								>
+									<option value="">Seleccione una opción</option>
+									{talla.map((talla) => (
+										<option key={talla.tallaId} value={talla.numeroTalla}>
+											{talla.numeroTalla}
+										</option>
+									))}
+								</select>
+							) : (
+								<p>cargando tallas...</p>
+							)}
+						</div>
+					</div>
+
 					<div className={style.card_action}>
 						<button className={style.btn}>Editar</button>
 					</div>
