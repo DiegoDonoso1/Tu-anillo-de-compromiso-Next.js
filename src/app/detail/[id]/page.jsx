@@ -5,7 +5,7 @@ import Image from 'next/image';
 import style from './detail.module.css';
 import Card from '../../components/card';
 import { getItemsById } from '../../services/itemService';
-import { useAppContext } from '@/app/components/statewrapper';
+import { useAppContext } from '../../components/statewrapper/index';
 
 export default async function Detail({ params }) {
 	const cart = useAppContext();

@@ -1,10 +1,22 @@
+'use client';
 import React from 'react';
 import style from './dashboard.module.css';
 import Image from 'next/image';
 import Cinta from '../components/cinta';
 import Link from 'next/link';
+import { getServerSession } from 'next-auth';
+import { redirect } from 'next/navigation';
+import { authOptions } from '../../utils/authOptions';
+import { useSession } from 'next-auth/react';
 
 export default function dashboard() {
+	const { data: session, status } = useSession({
+		required: true,
+	});
+
+	if (status === 'loading') {
+		return <></>;
+	}
 	return (
 		<>
 			<Cinta />

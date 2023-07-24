@@ -4,10 +4,16 @@ import styles from './navbar.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useAppContext } from '../statewrapper';
+import { useSession } from 'next-auth/react';
+import { redirect } from 'next/dist/server/api-utils';
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
 	const cart = useAppContext();
 	const [activo, setActivo] = useState(false);
+	const router = useRouter();
+
+	const session = useSession();
 
 	const handleButtonClick = () => {
 		setActivo(!activo);
@@ -97,9 +103,11 @@ export default function Navbar() {
 							<li className={styles.item}>
 								<Link href="#">Contactanos</Link>
 							</li>
-							<li className={styles.item}>
-								<Link href="/dashboard">Administrar</Link>
-							</li>
+							{session.status == 'authenticated' && (
+								<li className={styles.item}>
+									<Link href="/dashboard">Administrar</Link>
+								</li>
+							)}
 						</ul>
 					</nav>
 					<div className={styles.contenedor_utilidades}>
