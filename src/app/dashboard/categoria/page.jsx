@@ -8,9 +8,9 @@ export default async function page() {
 		<table className={styles.table}>
 			<thead className={styles.thead}>
 				<tr className={styles.filas}>
-					<th>id</th>
-					<th>nombre Categoria</th>
-					<th>administrar</th>
+					<th>Id</th>
+					<th>Nombre Categoria</th>
+					<th>Administrar</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,5 +27,6 @@ export default async function page() {
 				))}
 			</tbody>
 		</table>
+		
 	);
 }

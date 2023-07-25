@@ -27,3 +27,19 @@ export async function putProducts(categoryData, id) {
 		body: JSON.stringify(categoryData),
 	});
 }
+ 
+export async function postCategory (newCategory){
+	const request = await fetch ('http://localhost:8080/categorias/nuevo',{
+	method: 'POST',
+	headers: {
+	'Content-Type':'application/json',
+	},
+	body: JSON.stringify(newCategory),
+	});
+	}
+
+export async function getCategoryById(id) {
+	const request = await fetch(`http://localhost:8080/categorias/obtener/${id}`);
+	const items = await request.json();
+	return items;
+	}
